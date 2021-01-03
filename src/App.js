@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 
 import axios from 'axios'
 
+import instance from './service/request'
+
 export default class App extends PureComponent {
   constructor(props) {
     super(props)
@@ -138,7 +140,7 @@ export default class App extends PureComponent {
       return err
     })
 
-    axios.get("https://httpbin.org/get", {
+    instance.get("https://httpbin.org/get", {
       params: {
         name: "why"
       }
